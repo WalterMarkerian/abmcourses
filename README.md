@@ -23,8 +23,24 @@ SPRING MVC
     PostMapping
     -Utilizada para enviar informacion al servidor con la peticion por POST donde la informacion va oculta.
 
+    NotNull
+    -Objeto que puede estar vacio pero no con el valor de null.
+
+    NotEmpty
+    -Podemos validar colecciones de objeto, siempre y cuando la longitud de la coleccion sea > 0
+    -No queremos que no este vacio ni tenga valor de null.
+
+    NotBlank
+    -No valida colecciones de objeto.
+    -No acepta valores nulos, ni objetos vacios.
+
+    EntityListeners()
+    -Escucha el entity de nuestra clase, reacciona a las diferentes operaciones relacionadas a la tabla.
+    -(AuditingEntityListener.class) 
+
 DIFERENCIAS ENTRE Controller y RestController
     Controller
     -Utilizada para desplegar vistas o plantillas con la interfaz para la interaccion del cliente.
     RestController
     -Devuelve (informacion) objetos de tipo JSON o XML o respuestas HTTP
+

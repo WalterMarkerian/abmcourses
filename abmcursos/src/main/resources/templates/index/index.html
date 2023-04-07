@@ -8,13 +8,15 @@
                 </div>
                 <img th:src="@{images/logo.png}" class="mx-auto w-10">
                 <div class="card-body">
-                    <form action="/login" method="POST">
+                    <form th:action="@{login}" th:object="${TUsers}" method="POST">
                         <div class="form-group">
-                            <input type="email" name="User" placeholder="Email" class="form-control" required>
+                            <input type="text" th:field="*{Email}" placeholder="Email" class="form-control">
+                            <p class="form-text text-danger" th:if="${#fields.hasErrors('Email')}" th:errors="*{Email}"></p>
                         </div>
                         <br>
                         <div class="form-group">
-                            <input type="password" name="Password" placeholder="Password" class="form-control" required>
+                            <input type="password" th:field="*{Password}" placeholder="Password" class="form-control">
+                            <p class="form-text text-danger" th:if="${#fields.hasErrors('Password')}" th:errors="*{Password}"></p>
                         </div>
                         <br>
                         <div class="form-group">
