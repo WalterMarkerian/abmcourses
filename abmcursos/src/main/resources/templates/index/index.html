@@ -1,20 +1,24 @@
+<div th:replace="~{layout/header :: header}"></div>
 <div class="container p-4">
     <div class="row">
         <div class="col-md-4 mx-auto">
-            <div class="card text-center">
-                <div class="card-header">
+            <div class="card text-center border-secondary">
+                <div class="card-header text-white bg-secondary">
                     <h3>Login</h3>
                 </div>
+                <img th:src="@{images/logo.png}" class="mx-auto w-10">
                 <div class="card-body">
                     <form action="/login" method="POST">
                         <div class="form-group">
                             <input type="email" name="User" placeholder="Email" class="form-control" required>
                         </div>
+                        <br>
                         <div class="form-group">
                             <input type="password" name="Password" placeholder="Password" class="form-control" required>
                         </div>
+                        <br>
                         <div class="form-group">
-                            <button class="btn btn-success btn-blocl">
+                            <button class="btn btn-sm btn-outline-secondary">
                                 Sign In
                             </button>
                         </div>
@@ -24,3 +28,4 @@
         </div>
     </div>
 </div>
+<div th:replace="~{layout/footer :: footer}"></div>
