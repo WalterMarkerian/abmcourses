@@ -11,6 +11,7 @@ import com.abmcursos.abmcursos.models.TUsers;
 import com.abmcursos.abmcursos.repository.R_User;
 import com.abmcursos.abmcursos.repository.UserRepository;
 
+import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;
 
 @Controller
@@ -29,7 +30,7 @@ public class IndexController {
     }
 
     @PostMapping("/login")
-    public String login(@Valid TUsers user, BindingResult result, Model model) {
+    public String login(@Valid TUsers user, BindingResult result, Model model, HttpSession session) {
         if(result.hasFieldErrors("Email") || result.hasFieldErrors("Password")){
             model.addAttribute("TUsers", user);
             return "/index/index";
@@ -54,6 +55,8 @@ public class IndexController {
                         Object[] data = {
                             dataUser.getEmail()
                         };
+                        //Variable de sesion con nombre usersession que aloja los datos del usuario que inicio sesion(data)
+                        session.setAttribute("usersession", data);
                         return "redirect:/main";
                     }else{
                          //Si el email ingresado en la interfaz no esta cargado en la bd, mostrara este mensaje
@@ -67,6 +70,6 @@ public class IndexController {
 
             }
         }
-        return "/index/index";
+        return "index/index";
     }
 }

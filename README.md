@@ -45,3 +45,4 @@ DIFERENCIAS ENTRE Controller y RestController
     -Devuelve (informacion) objetos de tipo JSON o XML o respuestas HTTP
 
 Spring Boot Redis Session
+    -Interface usada para administrar las variables de sesiones para los usuarios que pueden iniciar sesion en la aplicacion
