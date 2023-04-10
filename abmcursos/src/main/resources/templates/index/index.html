@@ -11,15 +11,15 @@
                 <div class="card-body">
                     <form th:action="@{login}" th:object="${TUsers}" method="POST">
                         <div class="form-group">
-                            <input type="text" th:field="*{Email}" placeholder="Email" class="form-control">
+                            <input type="text" th:field="*{Email}" placeholder="Email" class="form-control" onkeypress="user.ClearMessages(event,this)">
                             <p class="form-text text-danger" th:if="${#fields.hasErrors('Email')}"
-                                th:errors="*{Email}"></p>
+                                th:errors="*{Email}" id="email"></p>
                         </div>
                         <br>
                         <div class="form-group">
-                            <input type="password" th:field="*{Password}" placeholder="Password" class="form-control">
+                            <input type="password" th:field="*{Password}" placeholder="Password" class="form-control" onkeypress="user.ClearMessages(event,this)">
                             <p class="form-text text-danger" th:if="${#fields.hasErrors('Password')}"
-                                th:errors="*{Password}"></p>
+                                th:errors="*{Password}" id="password"></p>
                         </div>
                         <br>
                         <div class="form-group">

@@ -44,3 +44,4 @@ DIFERENCIAS ENTRE Controller y RestController
     RestController
     -Devuelve (informacion) objetos de tipo JSON o XML o respuestas HTTP
 
+Spring Boot Redis Session
