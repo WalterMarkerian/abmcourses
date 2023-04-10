@@ -6,6 +6,15 @@
     max-width: 50%;
 }
 
-.border-bottom{
+.border-bottom, .form-control{
     border-bottom: 3px solid #d6d5d5 !important;
+}
+
+.card{
+    border-radius: 0.50rem;
+    box-shadow: 10px 15px 20px -14px rgba(0,0,0,0.50);
+}
+
+.menuNavbar{
+    width:100%;
 }
