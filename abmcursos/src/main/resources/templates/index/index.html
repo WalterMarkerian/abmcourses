@@ -13,13 +13,14 @@
                         <div class="form-group">
                             <input type="text" th:field="*{Email}" placeholder="Email" class="form-control" onkeypress="user.ClearMessages(event,this)">
                             <p class="form-text text-danger" th:if="${#fields.hasErrors('Email')}"
-                                th:errors="*{Email}" id="email"></p>
+                                th:errors="*{Email}" id="email"/>
                         </div>
                         <br>
                         <div class="form-group">
-                            <input type="password" th:field="*{Password}" placeholder="Password" class="form-control" onkeypress="user.ClearMessages(event,this)">
+                            <input type="password" th:field="*{Password}" placeholder="Password"
+                            class="form-control" onkeypress="user.ClearMessages(event,this)">
                             <p class="form-text text-danger" th:if="${#fields.hasErrors('Password')}"
-                                th:errors="*{Password}" id="password"></p>
+                                th:errors="*{Password}" id="password"/>
                         </div>
                         <br>
                         <div class="form-group">

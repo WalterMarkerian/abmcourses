@@ -24,9 +24,14 @@ public class IndexController {
     }
 
     @GetMapping("/")
-    public String index(TUsers user, Model model) {
-        model.addAttribute("TUsers", user);
-        return "/index/index";
+    public String index(TUsers user, Model model, HttpSession session) {
+        var userData = (Object[]) session.getAttribute("usersession");
+        if(userData == null){
+            model.addAttribute("TUsers", user);
+            return "index/index";
+        }else{
+            return "redirect:/main";
+        }
     }
 
     @PostMapping("/login")
@@ -71,5 +76,10 @@ public class IndexController {
             }
         }
         return "index/index";
+    }
+
+    @GetMapping(value ={"/*"})
+    public String error(){
+        return "error/error";
     }
 }
